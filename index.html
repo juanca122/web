@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto de Reciclaje</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Página de Inicio de Sesión -->
+        <div id="login" class="section">
+            <h2>Iniciar Sesión</h2>
+            <form id="loginForm">
+                <input type="text" id="usuario" placeholder="Correo o Usuario" required>
+                <input type="password" id="clave" placeholder="Contraseña" required>
+                <button type="submit">Iniciar Sesión</button>
+                <p id="errorLogin" class="error hidden">Usuario o contraseña incorrectos</p>
+                <p><a href="#" id="forgotPassword">Olvidé mi contraseña</a></p>
+                <p><a href="#" id="registerLink">¿No tienes cuenta? Regístrate</a></p>
+            </form>
+        </div>
+
+        <!-- Página de Registro -->
+        <div id="register" class="section hidden">
+            <h2>Regístrate</h2>
+            <form id="registerForm">
+                <input type="text" id="nombreRegistro" placeholder="Nombre" required>
+                <input type="email" id="emailRegistro" placeholder="Correo" required>
+                <input type="password" id="claveRegistro" placeholder="Contraseña" required>
+                <button type="submit">Registrarse</button>
+                <p><a href="#" id="backToLogin">¿Ya tienes cuenta? Inicia Sesión</a></p>
+            </form>
+        </div>
+
+        <!-- Recuperar Contraseña -->
+        <div id="recoverPassword" class="section hidden">
+            <h2>Recuperar Contraseña</h2>
+            <form id="recoverForm">
+                <input type="email" id="correoRecuperar" placeholder="Ingresa tu correo" required>
+                <button type="submit">Recuperar Contraseña</button>
+                <p id="mensajeRecuperacion" class="hidden">Se ha enviado un correo para recuperar la contraseña.</p>
+                <p><a href="#" id="backToLoginFromRecover">Volver a Iniciar Sesión</a></p>
+            </form>
+        </div>
+
+        <!-- Página Principal -->
+        <div id="mainPage" class="section hidden">
+            <header>
+                <nav>
+                    <ul class="menu">
+                        <li><a href="#infoReciclaje">Información</a></li>
+                        <li><a href="#venderReciclaje">Solicitar Reciclaje</a></li>
+                        <li><a href="#solicitudes">Ver Solicitudes</a></li>
+                        <li><button id="cerrarSesion">Cerrar Sesión</button></li>
+                    </ul>
+                    <div id="monedasRecompensa">Monedas: 0</div>
+                </nav>
+            </header>
+
+            <!-- Información sobre reciclaje -->
+            <section id="infoReciclaje">
+                <h2>Información sobre Reciclaje</h2>
+                <p>Aprende cómo reciclar correctamente y contribuye a un futuro sostenible.</p>
+            </section>
+
+            <!-- Solicitar reciclaje -->
+            <section id="venderReciclaje">
+                <h2>Solicitar Vender Reciclaje</h2>
+                <button id="abrirFormulario">Hacer una Solicitud</button>
+
+                <div id="formularioReciclaje" class="hidden">
+                    <form id="solicitudForm">
+                        <label for="tipoReciclaje">Tipo de Reciclaje:</label>
+                        <select id="tipoReciclaje" required>
+                            <option value="">Selecciona el tipo</option>
+                            <option value="Plástico">Plástico</option>
+                            <option value="Vidrio">Vidrio</option>
+                            <option value="Papel">Papel</option>
+                            <option value="Metal">Metal</option>
+                        </select>
+
+                        <label for="ubicacion">Ubicación:</label>
+                        <input type="text" id="ubicacion" placeholder="Ingresa la ubicación" required>
+
+                        <button type="submit">Enviar Solicitud</button>
+                    </form>
+                </div>
+            </section>
+
+            <!-- Ver solicitudes -->
+            <section id="solicitudes">
+                <h2>Solicitudes de Reciclaje</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tipo de Reciclaje</th>
+                            <th>Ubicación</th>
+                            <th>Acción</th>
+                        </tr>
+                    </thead>
+                    <tbody id="listaSolicitudes">
+                        <!-- Aquí se cargarán las solicitudes -->
+                    </tbody>
+                </table>
+            </section>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
+
